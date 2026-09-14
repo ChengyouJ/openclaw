@@ -491,7 +491,7 @@ describe("createMattermostClient", () => {
     const result = await client.request<unknown>("/anything", { method: "DELETE" });
     expect(result).toBeUndefined();
   });
-  
+
   it("treats an accepted reaction add as success when its body read fails", async () => {
     const release = vi.fn(async () => {});
     const stream = new ReadableStream<Uint8Array>({
@@ -523,7 +523,7 @@ describe("createMattermostClient", () => {
   it("treats an accepted reaction add as success when its body is undecodable", async () => {
     const release = vi.fn(async () => {});
     fetchWithSsrFGuardMock.mockResolvedValueOnce({
-      response: new Response("{\"partial\":", {
+      response: new Response('{"partial":', {
         status: 201,
         headers: { "content-type": "application/json" },
       }),

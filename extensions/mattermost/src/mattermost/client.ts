@@ -269,7 +269,7 @@ export function createMattermostClient(params: {
     if (res.status === 204) {
       return undefined as T;
     }
-    
+
     if (path === "/reactions" && init?.method?.toUpperCase() === "POST") {
       try {
         res.body?.cancel();
@@ -278,7 +278,7 @@ export function createMattermostClient(params: {
       }
       return undefined as T;
     }
-    
+
     try {
       const contentType = res.headers.get("content-type") ?? "";
       if (contentType.includes("application/json")) {
