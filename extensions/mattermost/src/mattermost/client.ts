@@ -270,13 +270,13 @@ export function createMattermostClient(params: {
       return undefined as T;
     }
     
-    if(path==="/reactions" && init?.method?.toUpperCase() == "POST"){
-      try{
+    if (path === "/reactions" && init?.method?.toUpperCase() === "POST") {
+      try {
         res.body?.cancel();
-      }catch{
+      } catch {
         // Ignore cancellation failures.
       }
-      return undefined as T
+      return undefined as T;
     }
     
     try {
