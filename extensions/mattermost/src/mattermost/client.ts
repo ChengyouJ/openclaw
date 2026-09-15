@@ -272,7 +272,7 @@ export function createMattermostClient(params: {
 
     if (path === "/reactions" && init?.method?.toUpperCase() === "POST") {
       try {
-        res.body?.cancel();
+        await res.body?.cancel();
       } catch {
         // Ignore cancellation failures.
       }
