@@ -276,6 +276,7 @@ export function createMattermostClient(params: {
       } catch {
         // Ignore cancellation failures.
       }
+      // SAFETY: Reaction creation is a no-result mutation; its caller discards the receipt.
       return undefined as T;
     }
 
